@@ -14,7 +14,6 @@ blocks:
           # Download source code from GitHub:
           - checkout
           - cache restore
-          - npm install -g yarn
       jobs:
         # - name: unit tests
         #   commands:
@@ -22,6 +21,8 @@ blocks:
         #     - npm test
         - name: e2e tests
           commands:
+            - npm install -g yarn
+            - yarn install
             # Install android emulator
             - sdkmanager "platform-tools" "platforms;android-24" "emulator"
             - sdkmanager "system-images;android-24;default;armeabi-v7a"

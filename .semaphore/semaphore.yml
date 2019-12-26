@@ -20,6 +20,7 @@ blocks:
             # For more info on caching, see https://docs.semaphoreci.com/article/68-caching-dependencies
             - cache restore
             - npm install -g yarn
+            - yarn install
 
             # Store the latest version of node modules in cache to reuse in
             # further blocks:
